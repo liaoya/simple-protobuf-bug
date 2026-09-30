@@ -13,7 +13,7 @@ cmake --build build
 ## How to reproduce
 
 Run `./build/empty-message-exe` show the json data is different (an empty message lost) after serialize and deserialize.
-The problem is `simple-protobuf` does not serialize message
+The problem is `simple-protobuf` does not serialize message correctly.
 
 ```text
 json format after construct
@@ -23,7 +23,10 @@ json format after deserialize
 ```
 
 - `demo1()` reproduce my origin problem
-- `demo2()` simple empty message is OK
+- `demo2()` show simple empty message is OK
 - `demo3()` show (oneof) empty field lost
 - `demo4()` show embed empty field lost
 - `demo5()` show `simple-protobuf` can deserialize the message correct, so the problem is serializing message
+
+I also use `protoc -I proto --decode usp_record.Record usp-record-1-4.proto <pb/connect.pb` to decode the message used in `demo5()`.
+The output is the same.
