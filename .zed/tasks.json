@@ -1,0 +1,65 @@
+[
+  {
+    "label": "CMake clean build",
+    "command": "rm",
+    "args": [
+      "-fr",
+      "$ZED_WORKTREE_ROOT/build"
+    ],
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always",
+    "reveal_target": "dock",
+    "hide": "never",
+    "shell": "system"
+  },
+  {
+    "label": "CMake configure preset default",
+    "command": "cmake",
+    "args": [
+      "--preset",
+      "default",
+      "-DCMAKE_C_COMPILER=/usr/bin/gcc-14",
+      "-DCMAKE_CXX_COMPILER=/usr/bin/g++-14"
+    ],
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always",
+    "reveal_target": "dock",
+    "hide": "never",
+    "shell": "system"
+  },
+  {
+    "label": "CMake configure",
+    "command": "cmake",
+    "args": [
+      "-DCMAKE_BUILD_TYPE=Debug",
+      "-G",
+      "Ninja",
+      "-S",
+      "$ZED_WORKTREE_ROOT",
+      "-B",
+      "$ZED_WORKTREE_ROOT/build"
+    ],
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always",
+    "reveal_target": "dock",
+    "hide": "never",
+    "shell": "system"
+  },
+  {
+    "label": "CMake build",
+    "command": "cmake",
+    "args": [
+      "--build",
+      "$ZED_WORKTREE_ROOT/build"
+    ],
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always",
+    "reveal_target": "dock",
+    "hide": "never",
+    "shell": "system"
+  }
+]

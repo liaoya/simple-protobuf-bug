@@ -1,0 +1,8 @@
+# Global settings
+[global]
+line-length = 0
+respect-gitignore = true
+#disabled-rules = []
+
+[MD013]
+line-length = 0

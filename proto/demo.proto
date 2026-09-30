@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package demo;
+
+message Empty {}
+
+message Person {
+    string name = 1;
+}
+
+message Combine {
+    string id = 1;
+    oneof body {
+        Empty empty = 2;
+        Person person = 3;
+    }
+}
+
+message Embed {
+    string id = 1;
+    Empty empty = 2;
+}
